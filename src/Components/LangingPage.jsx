@@ -23,7 +23,7 @@ export default function LangingPage() {
 
 
             </div>
-            <div className='flex flex-row h-20 w-full  justify-around items-center animate-move-down bg-black top-0 fixed z-10'>
+            <div className='flex flex-row h-20 w-full  justify-around items-center animate-move-down  top-0 z-10'>
                 <div className='text-4xl font-bold text-orange-600 font-Poppins'>Logo</div>
                 <div className='flex gap-10 font-medium text-xl cursor-pointer'>
                     <div className='hover:underline text-white'>Home</div>
