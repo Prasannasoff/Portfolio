@@ -20,7 +20,7 @@
     box-sizing: border-box;
     overflow: hidden;
     border-radius: 10px;
-    height: 400px;
+    height: 500px;
     padding: 0; /* Remove extra padding */
     margin: 0; /* Remove extra margin */
 
@@ -32,14 +32,15 @@
 .projectCont > :nth-child(4) {
     grid-column: span 2; /* Spans the first and second columns */
     grid-row: 2; /* Places it in the second row */
-    height: 700px; /* Larger height for the rectangle */
+    height: 750px; /* Larger height for the rectangle */
 }
 
 .projectCont > :nth-child(6) {
     grid-column: span 1; /* Occupies the third column */
     grid-row: 2; /* Places it in the second row */
-    height: 700px; /* Square height */
+    height: 750px; /* Square height */
 }
+
 
 .projectItem img {
     position: absolute;
@@ -64,4 +65,4 @@
     background-color: rgb(28, 28, 28);
     margin: 0; /* Remove any default margin */
     padding: 15px 15px; /* Add spacing inside the title if needed */
-}
+}   

@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectImage from "../assets/ProjectImages/doc1.png";
-import ProjectImage2 from "../assets/ProjectImages/MovieRecommendation.png";
+import ProjectImage2 from "../assets/ProjectImages/image.png";
 import ProjectImage3 from "../assets/ProjectImages/water.png";
 
 import ProjectImage4 from "../assets/ProjectImages/work2!.png";
