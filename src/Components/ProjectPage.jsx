@@ -1,7 +1,7 @@
 import React from "react";
-import ProjectImage from "../assets/ProjectImages/doc1.png";
+import ProjectImage from "../assets/ProjectImages/doctor.png";
 import ProjectImage2 from "../assets/ProjectImages/image.png";
-import ProjectImage3 from "../assets/ProjectImages/water.png";
+import ProjectImage3 from "../assets/ProjectImages/waterfinal2.png";
 
 import ProjectImage4 from "../assets/ProjectImages/work2!.png";
 import ProjectImage5 from "../assets/ProjectImages/ChatApp.png";
