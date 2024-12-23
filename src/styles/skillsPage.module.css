@@ -1,0 +1,11 @@
+
+.skillName {
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.skillLevel {
+  color: #ccc;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,46 @@
+.container{
+    display: grid;
+    grid-template-rows: 100px 100px 100px ;/*How many rows and colomns and specifying width of each*/
+    /*Instead of giving it we can also use repeat function*/
+    grid-template-rows: repeat(3,100px);/*==>grid-template-rows: 100px 100px 100px; */
+    grid-template-columns: 1fr 1fr 1fr;/*The fr units represents the fractional values of the available space*/
+    grid-auto-flow: row;
+    /* grid-auto-rows: 100px;This line will automatically allocate for new item even though we have set no.of rows as 4 and we include 5 th item it will automatically allocate size to it */
+    height: 100vh;
+    grid-gap:1em 2em;/*The first one is gaps on row and second one is gaps on colomn */
+    width:50%;  
+    /* Now making grid responsive without media*/
+    grid-template-rows: repeat(auto-fit,minmax(100px,1fr));
+}
+.item1,.item2,.item3{
+    /*Starts in first row and ends in 3 row. Similarly for column
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-column-end: 3;
+    Instead of doing like this we can set both start and end in single line given below
+*/
+/*Starts in 1st row and ends in 2nd row*/
+  
+    background-color: red;
+
+}
+.item4{
+    /*Now the same thing can be achieved by span keyword*/
+
+    /*span keyword will automatically span number of times from wherever you are that is now item 2 should start in row 3 since upto row 2 item 1 has taken. 
+    This span keyword automatically does this.
+    But here you cannot explicitly give different start and end position.*/
+    grid-row:2/4;
+    grid-column: span 2;
+    background-color: yellow;
+}
+.item5{
+    /* grid-area:row start/col start/row end/col end/col end */
+    grid-row:2/4;
+    grid-column: span 1;
+    background-color: green;
+}
+.item6{
+    background-color: aqua;
+}

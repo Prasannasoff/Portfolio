@@ -1,6 +1,8 @@
 import React from 'react';
 import LandingPage from './Components/LangingPage'
 import AboutMePage from './Components/AboutMePage';
+import GridSample from './Components/GridSample';
+import SkillsPage from './Components/SkillsPage';
 import ProjectPage from './Components/ProjectPage';
 import './styles/fontStyle.css'
 export default function App() {
@@ -11,6 +13,7 @@ export default function App() {
     <LandingPage />
     <AboutMePage />
     <ProjectPage />
+    <SkillsPage/>
   </div>
 </div>
 

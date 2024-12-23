@@ -42,14 +42,14 @@ export default function ProjectPage() {
         },
 
         {
-            image: ProjectImage5, // Replace with your actual project image
+            image: ProjectImage4, // Replace with your actual project image
             title: "Book Store",
             description: 'The Doctor Appointment System is a web-based application that streamlines booking and managing doctor appointments. It enables patients to easily find and schedule appointments with healthcare professionals. Key features include real-time availability tracking, automated reminders to minimize no-show rates, and secure user authentication. This system aims to enhance healthcare delivery and improve patient engagement.',
             githubLink: "https://github.com/yourusername/project3",
         },
 
         {
-            image: ProjectImage4, // Replace with your actual project image
+            image: ProjectImage5, // Replace with your actual project image
             title: "Water Monitoring",
             description: 'The Doctor Appointment System is a web-based application that streamlines booking and managing doctor appointments. It enables patients to easily find and schedule appointments with healthcare professionals. Key features include real-time availability tracking, automated reminders to minimize no-show rates, and secure user authentication. This system aims to enhance healthcare delivery and improve patient engagement.',
             githubLink: "https://github.com/yourusername/project3",
