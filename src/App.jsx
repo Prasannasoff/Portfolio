@@ -4,6 +4,7 @@ import AboutMePage from './Components/AboutMePage';
 import GridSample from './Components/GridSample';
 import SkillsPage from './Components/SkillsPage';
 import ProjectPage from './Components/ProjectPage';
+import ServicesPage from './Components/ServicesPage';
 import './styles/fontStyle.css'
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
     <AboutMePage />
     <ProjectPage />
     <SkillsPage/>
+    <ServicesPage/>
   </div>
 </div>
 
