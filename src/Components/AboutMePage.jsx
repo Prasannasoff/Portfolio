@@ -1,28 +1,74 @@
-import React from 'react'
-import MainImage from '../assets/MainImage.png'
-import reactImg from '../assets/icons/react.png';
-import cImg from '../assets/icons/c.png';
-import nodeImg from '../assets/icons/node.png';
-import pythonImg from '../assets/icons/python.png';
-import SunImg from '../assets/sun.png'
+import React, { useState } from 'react';
+import MainImage from '../assets/myProfile.png';
+
 export default function AboutMePage() {
+    const [activeSection, setActiveSection] = useState('skills');
+
+    const handleSectionClick = (section) => {
+        setActiveSection(section);
+    };
+
     return (
-        <div className='h-full flex flex-col overflow-hidden w-screen items-center justify-center'>
-            <div className='flex flex-col items-center'>
-                <div className='font-Poppins text-5xl text-white '>About Me</div>
-                <div className='flex flex-row pt-2 items-center justify-center mb-10'>
-                    <div className=' w-2/5 h-4/5 pt-10'>
-                    
-
-                        {/* <img src={SunImg} className='w-52 ml-32  pt-16  animate-rotate absolute'></img> */}
-                        <img src={MainImage} className='h-full z-20 pr-24 pt-10 animate-cont-left'></img>
+        <div className="flex flex-col p-10 lg:p-20 w-screen items-center justify-center overflow-hidden px-4">
+            <div className="flex items-center gap-5 md:flex-row lg:flex-row flex-col lg:items-start lg:justify-center w-full lg:gap-16 md:gap-16  max-w-6xl">
+                {/* Image Section */}
+                <div className="flex justify-center w-[300px] h-[300px] sm:w-[470px] sm:h-[520px] bg-white bg-opacity-30 lg:h-[520px] lg:w-[700px] mb-8 lg:mb-0 rounded-xl">
+                    <img
+                        src={MainImage}
+                        alt="Main"
+                        className="bottom-0  h-[300px]  mt-4 w-[200px] sm:mt-0 lg:mt-0  sm:h-[545px] sm:w-[400px]  lg:w-[380px] lg:h-[543px] animate-cont-left"
+                    />
+                </div>
+                {/* Description Section */}
+                <div className="flex flex-col items-center md:items-start lg:items-start sm:items-center w-full">
+                    <div className="lg:text-7xl text-2xl font-bold md:text-5xl sm:text-3xl text-white mb-5">About Me</div>
+                    <div className="flex flex-col px-14 items-center lg:p=0 md:p-0 lg:max-w-[700px] sm:max-w-[500px] sm:pr-5 lg:pr-5 md:pr-5 text-white">
+                        <p className="lg:text-lg text-base font-normal sm:text-md">
+                            I am a full-stack developer with 1 year of experience building web and mobile applications using React.js, React Native, Node.js, Spring Boot, MySQL, and MongoDB. I have experience with JWT-based authentication, SQL, and have completed 1-credit courses in UI/UX design and DevOps. I enjoy solving challenges, collaborating with teams, and constantly learning new technologies.
+                        </p>
                     </div>
-                    <div className='flex flex-col w-3/6 pt-10 gap-5 text-white'>
-                        <div className='font-Poppins lg:text-xl font-normal'>My name is Prasanna, and I am a dedicated full-stack developer currently in my third year at Kongu Engineering College, where I have achieved a CGPA of 8.58 up to the third semester. I hail from Erode and completed my schooling at Bharathi Vidya Bhavan in 2022. Proficient in programming languages such as C, C++, Python, and Java, I have also gained hands-on experience with frameworks like React.js, React Native, and Node.js. My passion for development has led me to create a full-stack website using the MERN stack. Additionally, I enjoy solving programming problems on platforms like LeetCode and other coding sites. I have also completed a 2-credit course in UI/UX, which has further refined my skills. With a strong foundation in both the front-end and back-end, I am eager to contribute my expertise and continue growing in the field of software development.</div>
-
+                    {/* Sections for Skills and Education */}
+                    <div className="flex gap-10 mt-10">
+                        {/* Skills Button */}
+                        <div
+                            className={`flex flex-col cursor-pointer ${activeSection === 'skills' ? 'border-b-4 border-orange-400' : ''}`}
+                            onClick={() => handleSectionClick('skills')}
+                        >
+                            <div className="text-2xl text-gray-200 font-medium text-opacity-50">Skills</div>
+                        </div>
+                        {/* Education Button */}
+                        <div
+                            className={`flex flex-col cursor-pointer ${activeSection === 'education' ? 'border-b-4 border-orange-400' : ''}`}
+                            onClick={() => handleSectionClick('education')}
+                        >
+                            <div className="text-2xl text-gray-200 font-medium text-opacity-50">Education</div>
+                        </div>
                     </div>
+
+                    {/* Conditional Rendering of Content */}
+                    {activeSection === 'skills' && (
+                        <div className="mt-5 text-white">
+                            <div className="text-orange-400 font-semibold">UI/UX</div>
+                            <div className="text-gray-400 text-opacity-50">Designing Web/App interfaces</div>
+                            <div className="text-orange-400 font-semibold mt-4">Web Development</div>
+                            <div className="text-gray-400 text-opacity-50">Web App development</div>
+                            <div className="text-orange-400 font-semibold mt-4">App Development</div>
+                            <div className="text-gray-400 text-opacity-50">Building Android/IOS apps</div>
+                        </div>
+                    )}
+
+                    {activeSection === 'education' && (
+                        <div className="mt-5 text-white">
+                            <div className="text-orange-400 font-semibold">2020</div>
+                            <div className="text-gray-400 text-opacity-50">SSLC From BVB school</div>
+                            <div className="text-orange-400 font-semibold mt-4">2022</div>
+                            <div className="text-gray-400 text-opacity-50">HSC From BVB school</div>
+                            <div className="text-orange-400 font-semibold mt-4">2022-2026</div>
+                            <div className="text-gray-400 text-opacity-50">BE From KEC College</div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
-    )
+    );
 }
