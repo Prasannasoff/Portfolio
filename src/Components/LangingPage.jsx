@@ -1,14 +1,15 @@
 import React from 'react'
 import globe from '../assets/globe.png';
 import meteor from '../assets/meteor.png';
-import MyImage from '../assets/PortfolioFinal.png';
+import MyImage from '../assets/portfolioProfile.png';
 import gitHub from '../assets/icons/github.png'
 import LinkedIn from '../assets/icons/linkedIn.png'
+import { FaCode, FaTrophy, FaPuzzlePiece } from 'react-icons/fa';
 import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from 'react-icons/fa';
 export default function LangingPage() {
     return (
-        <div className='overflow-hidden flex w-full flex-col h-screen '>
-            <div className='absolute w-10 flex flex-row gap-24 -top-20 left-0'>
+        <div className='overflow-hidden flex w-full flex-col'>
+            <div className='absolute w-10 xl:flex lg:flex flex-row gap-24 -top-20 left-0 hidden'>
                 <img src={meteor} className='animate-light animation-delay-75' alt='meteor' />
                 <img src={meteor} className='animate-light animation-delay-6500' alt='meteor' />
                 <img src={meteor} className='animate-light animation-delay-7800' alt='meteor' />
@@ -20,8 +21,6 @@ export default function LangingPage() {
                 <img src={meteor} className='animate-light animation-delay-4000' alt='meteor' />
                 <img src={meteor} className='animate-light animation-delay-10800' alt='meteor' />
                 <img src={meteor} className='animate-light animation-delay-500' alt='meteor' />
-
-
             </div>
             <div className='flex flex-row h-20 w-full  justify-around items-center animate-move-down  top-0 z-10'>
                 <div className='text-4xl font-bold text-orange-600 font-Poppins'>Logo</div>
@@ -31,18 +30,16 @@ export default function LangingPage() {
                     <div className='hover:text-red-600 text-white'>Projects</div>
                     <div className='hover:text-red-600 text-white'>Contacts</div>
                 </div>
-                <div className='flex gap-4 items-center'>
 
-                </div>
             </div>
-            <div className='flex h-full w-screen  overflow-hidden items-center justify-around align-middle  '>
-                <div className='flex gap-4 w-2/4 flex-col ml-20'>
-                    <div className='text-2xl font-medium text-orange-500 font-Rubik animate-move-down '>Full Stack Developer</div>
-                    <div className='text-7xl font-bold font-Poppins text-white flex flex-col gap-3'>
+            <div className='flex h-full w-screen py-10 p-7 gap-6 flex-col justify-center xl:flex-row lg:flex-row overflow-hidden items-center'>
+                <div className='flex xl:gap-4 lg:gap-6 gap-8 items-center xl:items-start lg:items-start w-[700px] flex-col ml-0 xl:ml-20 lg:ml-20'>
+                    <div className='xl:text-2xl lg:text-2xl  md:text-3xl text-xl font-medium text-orange-500 text-center lg:text-start xl:text-start font-Rubik animate-move-down '>Full Stack Developer</div>
+                    <div className='xl:text-7xl lg:text-4xl text-3xl md:text-5xl items-center font-bold xl:items-start lg:items-start font-Poppins text-white flex flex-col lg:gap-3 xl:gap-3'>
                         <div className='animate-cont-left'>Hello,my name is</div>
                         <div className='animate-cont-right'>Prasanna</div>
                     </div>
-                    <div className='text-lg font-normal text-gray-200 font-Rubik w-3/5 animate-cont-left'>Brief description with insights into myself,my vocational journey, and what I engage in professionally</div>
+                    <div className='text-lg font-normal text-gray-200 font-Rubik xl:max-w-[500px] lg:block xl:block animate-cont-left hidden'>Brief description with insights into myself,my vocational journey, and what I engage in professionally</div>
                     <div className='flex flex-row gap-3'>
                         <div className='flex flex-row  bg-orange-400 rounded-3xl p-2 font-Roboto items-center justify-center h-12 gap-3 w-40'>
                             <div className=' text-white ' >Contact me</div>
@@ -54,21 +51,50 @@ export default function LangingPage() {
                         </div>
 
                     </div>
-                    <div className='flex flex-row gap-5 items-center pl-3 mt-5'>
+                    <div className='flex mt-0 flex-row gap-5 items-center md:-mt-4 md:p-3 lg:pl-3 xl:pl-3 lg:mt-5 xl:mt-5'>
                         <a href='https://www.linkedin.com/in/prasanna-s-a4b392259/'>
-                            <FaLinkedin className='w-8 h-8 cursor-pointer hover:scale-150 text-white'/>
+                            <FaLinkedin className='w-8 h-8 cursor-pointer hover:scale-150 text-white' />
                         </a>
                         <a href='https://github.com/Prasannasoff'>
                             <FaGithub className='w-8 h-8 cursor-pointer hover:scale-150 text-white' />
                         </a>
                     </div>
                 </div>
-                <div className='flex -mt-40 h-2/6 w-2/6 mb-20 '>
-                    <div className='relative'>
-                        <img src={MyImage} className='z-10 animate-movement' alt='globe' />
+                <div className='relative px-24 flex items-center'>
+                    <div className='absolute hidden md:block lg:block xl:block 2xl:block -ml-10 z-20'>
+                        <div className=' p-2 rounded-xl bg-white max-w-[180px] flex items-center justify-center gap-2 shadow-lg'>
+                            <FaCode className='text-black text-opacity-70' size={35} color='#f97316' />
+                            <div className='text-black text-opacity-70 flex items-center'>
+                                <span className='text-orange-500 md:text-2xl lg:text-2xl xl:text-2xl text-sm font-bold'>5+</span>
+                                <div className='text-sm'>Projects</div>
+                            </div>
+                        </div>
                     </div>
+                    <div className='absolute hidden md:block lg:block xl:block 2xl:block right-5 top-5 z-20'>
+                        <div className='p-1 ld:p-2 xl:p-2 md:p-2 items-center rounded-xl max-w-[140px] lg:max-w-[180px] xl:max-w-[180px] md:max-w-[180px] bg-white flex gap-2 shadow-lg'>
+                            <FaPuzzlePiece className='text-black text-opacity-70' size={35} color='#f97316' />
+                            <div className='text-black text-opacity-70 flex items-center'>
+                                <span className='text-orange-500 md:text-2xl lg:text-2xl xl:text-2xl text-sm font-bold'>200+</span>
+                                <div className='text-sm'>Leetcode Problems</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='absolute hidden md:block lg:block xl:block 2xl:block right-5 bottom-5 z-20'>
 
+                        <div className='p-1 ld:p-2 xl:p-2 md:p-2 items-center rounded-xl max-w-[180px] bg-white flex gap-2 shadow-lg'>
+                            <FaTrophy className='text-black text-opacity-70' size={35} color='#f97316' />
+                            <div className='text-black text-opacity-70 flex items-center'>
+                                <span className='text-orange-500 md:text-2xl lg:text-2xl xl:text-2xl text-sm font-bold'>2+</span>
+                                <div className='text-sm'>Achievements</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className='bg-green-400 w-[280px] h-[330px] rounded-3xl md:w-[390px] md:h-[470px] lg:min-w-[420px] lg:min-h-[480px] xl:w-[480px] xl:h-[570px] flex overflow-hidden'>
+                        <img src={MyImage} className='z-10 w-full h-full' alt='globe' />
+                    </div>
                 </div>
+
             </div>
         </div>
     )
