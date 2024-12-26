@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import globe from '../assets/globe.png';
 import meteor from '../assets/meteor.png';
 import MyImage from '../assets/portfolioProfile.png';
 import gitHub from '../assets/icons/github.png'
 import LinkedIn from '../assets/icons/linkedIn.png'
+
 import { FaCode, FaTrophy, FaPuzzlePiece } from 'react-icons/fa';
 import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from 'react-icons/fa';
 export default function LangingPage() {
+    const [scrollY, setScrollY] = useState(0);
+
+    //The event listener listens for the scroll event on the window object. This event fires whenever the user scrolls the page, and each time it fires, the handleScroll function is executed.
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+           
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
     return (
         <div className='overflow-hidden flex w-full flex-col'>
             <div className='absolute w-10 xl:flex lg:flex flex-row gap-24 -top-20 left-0 hidden'>
@@ -32,7 +45,8 @@ export default function LangingPage() {
                 </div>
 
             </div>
-            <div className='flex h-full w-screen py-10 p-7 gap-6 flex-col justify-center xl:flex-row lg:flex-row overflow-hidden items-center'>
+            <div className='flex h-full w-screen py-10 p-7 gap-6 flex-col justify-center xl:flex-row lg:flex-row overflow-hidden items-center' >
+
                 <div className='flex xl:gap-4 lg:gap-6 gap-8 items-center xl:items-start lg:items-start w-[700px] flex-col ml-0 xl:ml-20 lg:ml-20'>
                     <div className='xl:text-2xl lg:text-2xl  md:text-3xl text-xl font-medium text-orange-500 text-center lg:text-start xl:text-start font-Rubik animate-move-down '>Full Stack Developer</div>
                     <div className='xl:text-7xl lg:text-4xl text-3xl md:text-5xl items-center font-bold xl:items-start lg:items-start font-Poppins text-white flex flex-col lg:gap-3 xl:gap-3'>
@@ -90,12 +104,16 @@ export default function LangingPage() {
                         </div>
 
                     </div>
-                    <div className='bg-green-400 w-[280px] h-[330px] rounded-3xl md:w-[390px] md:h-[470px] lg:min-w-[420px] lg:min-h-[480px] xl:w-[480px] xl:h-[570px] flex overflow-hidden'>
+                    <div className='bg-green-400 w-[280px] h-[330px] rounded-3xl md:w-[390px] md:h-[470px] lg:min-w-[420px] lg:min-h-[480px] xl:w-[480px] xl:h-[570px] flex overflow-hidden' style={{
+                        transform: `translateY(${scrollY * 0.4}px)`, // Slower movement
+                        transition: 'transform 0.1s ease-out',
+                    }}  >
                         <img src={MyImage} className='z-10 w-full h-full' alt='globe' />
                     </div>
                 </div>
 
             </div>
+
         </div>
     )
 }

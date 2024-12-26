@@ -40,3 +40,35 @@
 .read-the-docs {
   color: #888;
 }
+
+/* General styling for parallax layers */
+.animation, .animation_layer {
+  height: 100vh;
+  width: 100%;
+ 
+}
+
+.animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.animation_layer {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Jungle image styling */
+#jungle {
+  background-image: url('./assets/Paralleximage.jpg'); /* Path to jungle image */
+  z-index: 1;
+}
+
+/* Tree image styling */
+#tree {
+  background-image: url('./assets/paralleximage2.png'); /* Path to tree image */
+  z-index: 2;
+  bottom:0;
+  margin-top: 20;
+}
