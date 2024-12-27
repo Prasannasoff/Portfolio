@@ -16,7 +16,6 @@ function Achievement() {
     const moveLeft = useTransform(firstScrollProgress, [0, 0.5, 1], [-280, 0, -280]);
     const moveRight = useTransform(firstScrollProgress, [0, 0.5, 1], [280, 0, 280]);
 
-   
 
     return (
         <div className="h-full flex flex-col bg-gray-100">

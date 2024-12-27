@@ -14,12 +14,14 @@ export default function LangingPage() {
     useEffect(() => {
         const handleScroll = () => {
             setScrollY(window.scrollY);
-           
+
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    console.log("Y+", scrollY);
     return (
         <div className='overflow-hidden flex w-full flex-col'>
             <div className='absolute w-10 xl:flex lg:flex flex-row gap-24 -top-20 left-0 hidden'>
