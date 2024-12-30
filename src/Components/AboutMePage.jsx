@@ -10,7 +10,7 @@ export default function AboutMePage() {
 
     return (
         <div className="flex flex-col p-10 lg:p-20 w-screen items-center justify-center overflow-hidden px-4">
-            <div className="flex items-center gap-5 md:flex-row lg:flex-row flex-col lg:items-start lg:justify-center w-full lg:gap-16 md:gap-16  max-w-6xl">
+            <div className="flex items-center gap-5 md:flex-row lg:flex-row flex-col-reverse lg:items-start lg:justify-center w-full lg:gap-16 md:gap-16  max-w-6xl">
                 {/* Image Section */}
                 <div className="flex justify-center w-[300px] h-[300px] sm:w-[470px] sm:h-[520px] bg-white bg-opacity-30 lg:h-[520px] lg:w-[700px] mb-8 lg:mb-0 rounded-xl">
                     <img
