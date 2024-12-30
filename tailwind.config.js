@@ -10,7 +10,9 @@ export default {
         Rubik: ['Rubik', 'sans-serif'],
         Lato: ['Lato', 'sans-serif'],
         Poppins: ['Poppins', 'sans-serif'],
-        Roboto: ['Roboto', 'sans-serif']
+        Roboto: ['Roboto', 'sans-serif'],
+        Slussen: ['Slussen', 'sans-serif'], // Add Slussen font
+
       },
       keyframes: {
 

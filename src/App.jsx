@@ -7,6 +7,7 @@ import ProjectPage from './Components/ProjectPage';
 import ServicesPage from './Components/ServicesPage';
 import Achievement from './Components/Achievement';
 import PrizeList from './Components/PrizeList';
+import CertificatePage from './Components/CertificatePage';
 import './styles/fontStyle.css'
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <ProjectPage />
         <Achievement />
         <PrizeList />
+        <CertificatePage />
         <SkillsPage />
         <ServicesPage />
 

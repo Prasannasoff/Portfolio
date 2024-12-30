@@ -1,128 +1,163 @@
-import React, { useRef, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import guestHouseImg from '../assets/ProjectImages/work2!.png';
-import Lenis from "@studio-freight/lenis";
+import React, { useEffect, useRef } from "react";
+import Lenis from "@studio-freight/lenis"; // Import Lenis
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import guestImg from "../assets/ProjectImages/work2!.png";
+import paperPresentation from "../assets/paper.jpg";
+gsap.registerPlugin(ScrollTrigger);
 
-function PrizeList() {
-    const lenisRef = useRef(null);
-    const guestHouseRef = useRef(null);
-    //scroll event is triggered when the center of the target element reaches the start of the viewport-center start 
-    // Scroll tracking for the right section (Guest House & Paper Presentation)
-    const { scrollYProgress } = useScroll({
-        target: guestHouseRef,
-        offset: ["start start", "center start", "end middle"], // Adjust when the scroll effect triggers
-    });
+const AchievementPage = () => {
+    const sectionRef = useRef(null); // Reference for the section element
+    const background = useRef(null);
+    const introText = useRef(null);
+    const background2 = useRef(null);
+    const introText2 = useRef(null);
 
-    // Use scrollYProgress to control the vertical position (y) of the images
-    const guestHouseY = useTransform(scrollYProgress, [0, 0.33, 0.5, 1], [-200, -1400, -1500, 0]);  // Move guest house image up
-    const paperPresentationY = useTransform(scrollYProgress, [0, 0.33, 0.5, 1], [2200, 800, -400, 0]);  // Move paper presentation image in
     useEffect(() => {
-        // Initialize Lenis
+        const isMobile = window.innerWidth <= 768; // Check if the screen width is less than or equal to 768px
+
         const lenis = new Lenis({
-            duration: 1.2, // Animation duration
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth easing
-            smooth: true,
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         });
 
-        // Reference Lenis instance
-        lenisRef.current = lenis;
-
-        // Connect Lenis to the animation frame
-        function raf(time) {
+        const raf = (time) => {
             lenis.raf(time);
+            ScrollTrigger.update();
             requestAnimationFrame(raf);
-        }
-
+        };
         requestAnimationFrame(raf);
 
-        // Clean up on component unmount
+        // Adjusted GSAP animation for the first background
+        gsap.fromTo(
+            background.current,
+            { width: isMobile ? '150px' : '300px', height: isMobile ? '250px' : '500px', opacity: 0, x: isMobile ? -500 : -1500 },
+            {
+                width: isMobile ? '350px' : '800px',
+                height: isMobile ? '450px' : '700px',
+                opacity: 1,
+               
+                x: 0,
+                scrollTrigger: {
+                    trigger: background.current,
+                    start: "top center",
+                    end: "center center",
+                    scrub: true,
+                    markers: false,
+                    toggleActions: "play reverse play reverse",
+                },
+            }
+        );
+
+        // Adjusted GSAP animation for the first intro text
+        gsap.fromTo(
+            introText.current,
+            { fontSize: isMobile ? '30px' : '45px', opacity: 0, x: isMobile ? 500 : 1000 },
+            {
+                fontSize: isMobile ? '50px' : '70px',
+                opacity: 1,
+                x: 0,
+                ease: 'power1.in',
+                scrollTrigger: {
+                    trigger: introText.current,
+                    scrub: true,
+                    start: 'top center',
+                    end: 'center center',
+                },
+            }
+        );
+
+        // Adjusted GSAP animation for the second background
+        gsap.fromTo(
+            background2.current,
+            { width: isMobile ? '150px' : '300px', height: isMobile ? '250px' : '500px', opacity: 0, x: isMobile ? 500 : 1000 },
+            {
+                width: isMobile ? '320px' : '900px',
+                height: isMobile ? '250px' : '600px',
+                opacity: 1,
+                x: 0,
+                scrollTrigger: {
+                    trigger: background2.current,
+                    start: "top 70%",
+                    end: "top 10%",
+                    scrub: true,
+                    markers: false,
+                    toggleActions: "play reverse play reverse",
+                },
+            }
+        );
+
+        // Adjusted GSAP animation for the second intro text
+        gsap.fromTo(
+            introText2.current,
+            { fontSize: isMobile ? '30px' : '45px', opacity: 0, x: isMobile ? -500 : -1000 },
+            {
+                fontSize: isMobile ? '50px' : '70px',
+                opacity: 1,
+                x: 0,
+                ease: 'power1.in',
+                scrollTrigger: {
+                    trigger: introText2.current,
+                    scrub: true,
+                    start: 'top center',
+                    end: 'center center',
+                },
+            }
+        );
+
         return () => {
             lenis.destroy();
-        };
-    }, []);
-
-    useEffect(() => {
-        // Predefined Y-axis positions for scrolling
-        const scrollPositions = [4100,4720]; // Adjust positions as needed
-        console.log("S+" + scrollPositions)
-        let currentPositionIndex = 0;
-
-        // Scroll listener
-        function handleScroll(event) {
-            event.preventDefault();
-
-            const lenis = lenisRef.current;
-            if (!lenis) return;
-
-            const delta = event.deltaY;
-
-            // Determine scroll direction
-            if (delta > 0 && currentPositionIndex < scrollPositions.length - 1) {
-                // Scroll down
-                currentPositionIndex++;
-            } else if (delta < 0 && currentPositionIndex > 0) {
-                // Scroll up
-                currentPositionIndex--;
-            }
-
-            // Scroll to the next position
-            lenis.scrollTo(scrollPositions[currentPositionIndex], {
-                immediate: false,
-            });
-        }
-
-        // Add event listener
-        window.addEventListener("wheel", handleScroll, { passive: false });
-
-        // Clean up on unmount
-        return () => {
-            window.removeEventListener("wheel", handleScroll);
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
     }, []);
 
     return (
-        <div className="flex h-[250vh]" ref={guestHouseRef}>
-            {/* Left Section: Fixed Achievements Text */}
-            <div className="w-1/2 flex items-center justify-center bg-gray-100">
-                <h2 className="text-8xl font-extrabold text-gray-800">Achievements</h2>
-            </div>
-
-            {/* Right Section: Scrollable Content */}
-            <div
-
-                className="w-1/2 overflow-hidden relative bg-gray-100 flex flex-col items-center justify-end"
-            >
-
-                {/* Guest House Image: Moves up as you scroll */}
-                <motion.div
-                    style={{ y: guestHouseY }}
-                    className="absolute flex flex-col bottom-40 items-center justify-center"
-                >
-                    <div className="h-[550px] w-[450px] overflow-hidden rounded-xl">
-                        <img src={guestHouseImg} alt="Guest House Booking" />
+        <div className="flex flex-col">
+            <div className="w-full mx-auto flex flex-col items-center md:items-start p-5" ref={sectionRef}>
+                <div className="flex flex-col items-center">
+                    <div className="flex flex-col md:flex-row  d:gap-4 w-full">
+                        <div ref={background} className="w-full h-[500px]">
+                            <img
+                                src={guestImg}
+                                alt="Guest Image"
+                                className="w-full h-full rounded-xl overflow-hidden object-cover filter brightness-70"
+                            />
+                        </div>
+                        <div ref={introText} className="max-w-md text-white p-2">
+                            <div className="text-3xl md:text-5xl font-bold mb-2">
+                                Guest House Booking
+                            </div>
+                            <div className="border border-orange-500 w-48 mb-2"></div>
+                            <p className="text-sm md:text-lg text-white">
+                                We secured second prize in the 30-hour hackathon and developed this project using the MERN Stack. The application allows users to book guest houses, filter by date and available rooms, and view guest houses in a VR model. Notifications are sent to users upon successful booking, and users can also provide feedback about their experience.
+                            </p>
+                        </div>
                     </div>
-                    <div className="text-4xl font-semibold text-white mt-4">
-                        Guest House Booking
-                    </div>
-                </motion.div>
+                </div>
 
-                {/* Paper Presentation Image: Appears after Guest House */}
-
-                <motion.div
-                    style={{ y: paperPresentationY }}
-                    className="flex flex-col items-center"
-                >
-                    <div className="h-[550px] w-[450px] overflow-hidden rounded-xl">
-                        {/* Replace with the Paper Presentation image */}
-                        <img src={guestHouseImg} alt="Paper Presentation" />
+                <div className="flex flex-col items-center">
+                    <div className="flex flex-col-reverse md:flex-row md:gap-4 w-full p-5">
+                        <div ref={introText2} className="max-w-md text-white p-2 z-10">
+                            <div className="text-3xl md:text-5xl font-bold mb-2">
+                                Paper Presentation
+                            </div>
+                            <div className="border border-orange-500 w-48 mb-2"></div>
+                            <p className="text-sm md:text-lg text-white">
+                                We secured second prize in the 30-hour hackathon and developed this project using the MERN Stack. The application allows users to book guest houses, filter by date and available rooms, and view guest houses in a VR model. Notifications are sent to users upon successful booking, and users can also provide feedback about their experience.
+                            </p>
+                        </div>
+                        <div ref={background2} className="w-full h-[500px]">
+                            <img
+                                src={paperPresentation}
+                                alt="Paper Presentation"
+                                className="w-full h-full rounded-xl object-cover filter brightness-70"
+                            />
+                        </div>
                     </div>
-                    <div className="text-4xl font-semibold text-gray-800 mt-4">
-                        Paper Presentation
-                    </div>
-                </motion.div>
+                </div>
             </div>
         </div>
     );
-}
+};
 
-export default PrizeList;
+export default AchievementPage;

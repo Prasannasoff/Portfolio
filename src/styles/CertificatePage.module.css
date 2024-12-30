@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'Slussen';
+    src: url('../fonts/disca.otf');
+  }
+  
+  .verticalSection {
+    height: 200vh;
+    width: 100vw;
+    font-family: Slussen;
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+}
+
+h2 span {
+    display: block;
+}
+
+.container {
+    width: 95%;
+    display: flex;
+    margin: auto;
+}
+
+.verticalContent {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+h2 {
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 85%;
+    border-left: 3px solid #ff98a2;
+    padding: 25px;
+    margin: 0
+}
+
+.colLeft {
+    width: 50%;
+    height: 100%;
+}
+
+.colRight {
+    width: 40%;
+}
+
+.verticalItem {
+    padding: 15px;
+    background-color: rgba(96, 96, 96, 0.395);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap:10px
+}
+
+.verticalItem:not(:last-child) {
+    margin-bottom: 240px;
+
+}
+
+.verticalItem:last-child {
+    transform: translateX(2500px);
+}
+
+.heading {
+    font-size: 100px;
+    font-weight: 700;
+}
+
+
+
+.hidden {
+    opacity: 0;
+}
+
+h3 {
+    font-size: 20px;
+    color: white;
+    line-height: 100%;
+}
+
+h3,
+h2 {
+    text-transform: uppercase;
+}
+
+/* General styles for desktop view remain unchanged */
+
+@media (max-width: 768px) {
+
+    .verticalSection {
+        height: auto;
+
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 60px;
+        font-weight: 900;
+        line-height: 85%;
+        border-left: 3px solid #ff98a2;
+        padding: 10px;
+        margin: 0
+    }
+
+    .verticalContent {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        /* Center align the content */
+    }
+
+    .verticalItem:not(:last-child) {
+        margin-bottom: 40px;
+
+    }
+
+    .colLeft,
+    .colRight {
+        width: 80%;
+        /* Full width on small screens */
+        margin-bottom: 20px;
+        /* Add spacing between stacked sections */
+    }
+
+    .heading {
+        font-size: 30px;
+        /* Adjust heading size for smaller screens */
+        text-align: center;
+        /* Center-align headings */
+    }
+
+    .verticalItem {
+        margin-bottom: 20px;
+        /* Reduce spacing between items */
+        padding: 10px;
+    }
+
+    .verticalItem:last-child {
+        transform: none;
+        /* Prevent unwanted horizontal overflow */
+    }
+
+    h3 {
+        font-size: 16px;
+        /* Smaller font size for headings */
+        text-align: center;
+    }
+
+    .hidden {
+        opacity: 1;
+        /* Make sure hidden items are visible when needed */
+    }
+
+    /* Adjust buttons */
+    .verticalItem div {
+        flex-direction: row;
+        font-size: 12px;
+        /* Smaller font for buttons */
+        padding: 3px;
+        height: 30px;
+    }
+}
