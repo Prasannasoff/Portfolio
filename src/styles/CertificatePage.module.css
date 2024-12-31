@@ -6,6 +6,7 @@
   .verticalSection {
     height: 200vh;
     width: 100vw;
+    padding-top:100px;
     font-family: Slussen;
     font-size: 24px;
     font-weight: 400;
@@ -25,7 +26,8 @@ h2 span {
 .verticalContent {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+
 }
 
 h2 {
@@ -165,4 +167,4 @@ h2 {
         padding: 3px;
         height: 30px;
     }
-}
+}   

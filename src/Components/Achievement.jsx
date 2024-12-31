@@ -5,7 +5,7 @@ import success2 from '../assets/success2.png';
 
 function Achievement() {
     const targetRef = useRef(null);
-  
+
 
     // Use useScroll to track the scroll progress of the first section
     const { scrollYProgress: firstScrollProgress } = useScroll({
@@ -39,13 +39,13 @@ function Achievement() {
                     style={{ x: moveRight }}
                 />
                 {/* Static Achievements Text */}
-                <h2 className="z-10 text-8xl font-extrabold text-center text-gray-800">
+                <div className="z-10 text-8xl font-extrabold text-center text-gray-800">
                     Achievements
-                </h2>
+                </div>
             </motion.div>
 
             {/* Guest House Booking Section */}
-         
+
 
         </div>
     );

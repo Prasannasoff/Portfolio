@@ -17,11 +17,11 @@ export default function App() {
         <LandingPage />
         <AboutMePage />
         <ProjectPage />
-        <Achievement />
-        <PrizeList />
-        <CertificatePage />
         <SkillsPage />
         <ServicesPage />
+        <Achievement />
+        <PrizeList />
+        <CertificatePage /> 
 
       </div>
     </div>

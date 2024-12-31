@@ -56,7 +56,7 @@ const CertificatePage = () => {
         timeln.fromTo(
             colLeftRef.current,
             { y: 0 },
-            { y: "190vh", duration: 3, ease: "none" },
+            { y: "150vh", duration: 3, ease: "none" },
             0
         );
 
