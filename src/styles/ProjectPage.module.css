@@ -13,6 +13,7 @@
     position: relative;
     overflow: hidden;
     display: flex;
+ 
     flex-direction: column;
     justify-content: flex-end; /* Align title at the bottom */
     align-items: start;
@@ -23,6 +24,7 @@
 .projectItem:hover img{
     transform: scale(1.05);
 }
+
 .projectItem img {
     width: 100%;
     height: 100%;
@@ -34,6 +36,8 @@
 }
 
 .projectTitle {
+    display: flex;
+    flex-direction: column;
     position: relative;
     z-index: 2; /* Ensure the title appears above the image */
     color: white;
@@ -42,9 +46,24 @@
     font-weight: 550;
     background-color: rgba(31, 31, 31, 0.993); /* Semi-transparent background for readability */
     padding: clamp(10px, 3vw, 20px);
+    padding-bottom:clamp(15px, 3vw,35px);
     width: 100%;
 }
-
+.projectDesc{
+    position: absolute;
+    font-family:'Poppins';
+    font-size: 17px;
+    color:rgb(99, 99, 99);
+    opacity: 40px;
+    cursor: pointer;
+    bottom:-50px;
+    padding-top: 10px; /* Add padding to create a gap */
+    transition: transform 0.3s ease, bottom 0.3s ease;
+}
+.projectItem:hover .projectDesc{
+    bottom:10px;
+    transform: translateY(0);
+}
 /* Layout for specific items */
 .projectCont > :nth-child(1),
 .projectCont > :nth-child(2),

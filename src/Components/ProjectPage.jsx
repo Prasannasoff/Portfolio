@@ -1,37 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import ProjectImage from "../assets/ProjectImages/doctor.png";
 import ProjectImage2 from "../assets/ProjectImages/image.png";
 import ProjectImage3 from "../assets/ProjectImages/waterfinal2.png";
 
 import ProjectImage4 from "../assets/ProjectImages/work2!.png";
 import ProjectImage5 from "../assets/ProjectImages/ChatApp.png";
-
+import DescriptionCard from "./DescriptionCard";
 
 
 import ProjectCard from "./ProjectCard"; // Adjust the path based on your folder structure
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import styles from '../styles/ProjectPage.module.css'
 export default function ProjectPage() {
+    const [selectedProject, setSelectedProject] = useState(null);
     const projects = [
         {
             image: ProjectImage,
             title: "Doctor Appointment System",
             description: 'The Doctor Appointment System is a web-based application that streamlines booking and managing doctor appointments. It enables patients to easily find and schedule appointments with healthcare professionals. Key features include real-time availability tracking, automated reminders to minimize no-show rates, and secure user authentication. This system aims to enhance healthcare delivery and improve patient engagement.',
-            githubLink: "https://github.com/Prasannasoff/DoctorAppointmentSystem "
+            githubLink: "https://github.com/Prasannasoff/DoctorAppointmentSystem ",
+            techStack: ['MERN stack']
         },
         // Add more projects here
         {
             image: ProjectImage2, // Replace with your actual project image
             title: "Movie Recommendation System",
             description: 'The Doctor Appointment System is a web-based application that streamlines booking and managing doctor appointments. It enables patients to easily find and schedule appointments with healthcare professionals. Key features include real-time availability tracking, automated reminders to minimize no-show rates, and secure user authentication. This system aims to enhance healthcare delivery and improve patient engagement.',
-
             githubLink: "https://github.com/yourusername/project2",
+            techStack: ['MERN stack']
         },
         {
             image: ProjectImage3, // Replace with your actual project image
             title: "MultiChat Application",
             description: 'The Doctor Appointment System is a web-based application that streamlines booking and managing doctor appointments. It enables patients to easily find and schedule appointments with healthcare professionals. Key features include real-time availability tracking, automated reminders to minimize no-show rates, and secure user authentication. This system aims to enhance healthcare delivery and improve patient engagement.',
             githubLink: "https://github.com/yourusername/project3",
+            techStack: ['MERN stack']
         },
 
         {
@@ -39,6 +42,7 @@ export default function ProjectPage() {
             title: "Guest House Booking",
             description: 'The Doctor Appointment System is a web-based application that streamlines booking and managing doctor appointments. It enables patients to easily find and schedule appointments with healthcare professionals. Key features include real-time availability tracking, automated reminders to minimize no-show rates, and secure user authentication. This system aims to enhance healthcare delivery and improve patient engagement.',
             githubLink: "https://github.com/yourusername/project3",
+            techStack: ['React', 'Spring Boot', 'MySQL', 'Socket']
         },
 
         {
@@ -46,6 +50,7 @@ export default function ProjectPage() {
             title: "Book Store",
             description: 'The Doctor Appointment System is a web-based application that streamlines booking and managing doctor appointments. It enables patients to easily find and schedule appointments with healthcare professionals. Key features include real-time availability tracking, automated reminders to minimize no-show rates, and secure user authentication. This system aims to enhance healthcare delivery and improve patient engagement.',
             githubLink: "https://github.com/yourusername/project3",
+            techStack: ['MERN stack']
         },
 
         {
@@ -53,9 +58,17 @@ export default function ProjectPage() {
             title: "Water Monitoring",
             description: 'The Doctor Appointment System is a web-based application that streamlines booking and managing doctor appointments. It enables patients to easily find and schedule appointments with healthcare professionals. Key features include real-time availability tracking, automated reminders to minimize no-show rates, and secure user authentication. This system aims to enhance healthcare delivery and improve patient engagement.',
             githubLink: "https://github.com/yourusername/project3",
+            techStack: ['MERN stack']
         },
 
     ];
+    const openProject = (project) => {
+        setSelectedProject(project);
+    };
+
+    const closeProject = () => {
+        setSelectedProject(null);
+    };
 
     return (
         <div className={styles.mainCont}>
@@ -67,10 +80,19 @@ export default function ProjectPage() {
                             alt={project.title}
                             className={styles.projectImage}
                         />
-                        <div className={styles.projectTitle}>{project.title}</div>
+                        <div className={styles.projectTitle}>
+                            <div>{project.title}</div>
+                            <div className={styles.projectDesc} onClick={() => openProject(project)}>View Project</div>
+                        </div>
                     </div>
                 ))}
             </div>
+            {selectedProject && (
+                <DescriptionCard
+                    projectDetails={selectedProject}
+                    onClose={closeProject}
+                />
+            )}
         </div>
 
         // <div className="h-full flex flex-col items-center justify-center" >

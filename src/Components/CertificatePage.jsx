@@ -56,13 +56,13 @@ const CertificatePage = () => {
         timeln.fromTo(
             colLeftRef.current,
             { y: 0 },
-            { y: "150vh", duration: 3, ease: "none" },
+            { y: "50vh", duration: 3, ease: "none" },
             0
         );
 
         ScrollTrigger.create({
             animation: timeln,
-            trigger: sectionRef.current,
+            trigger: colLeftRef.current,
             start: "top top",
             end: "bottom center",
             scrub: true,
