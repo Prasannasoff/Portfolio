@@ -6,7 +6,7 @@ import ProjectImage3 from "../assets/ProjectImages/waterfinal2.png";
 import ProjectImage4 from "../assets/ProjectImages/work2!.png";
 import ProjectImage5 from "../assets/ProjectImages/ChatApp.png";
 import DescriptionCard from "./DescriptionCard";
-
+import { FaArrowRight } from 'react-icons/fa';
 
 import ProjectCard from "./ProjectCard"; // Adjust the path based on your folder structure
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
@@ -82,7 +82,10 @@ export default function ProjectPage() {
                         />
                         <div className={styles.projectTitle}>
                             <div>{project.title}</div>
-                            <div className={styles.projectDesc} onClick={() => openProject(project)}>View Project</div>
+                            <div className={styles.projectDesc} onClick={() => openProject(project)}>
+                                <div>View Project</div>
+                                <div><FaArrowRight/></div>
+                            </div>
                         </div>
                     </div>
                 ))}

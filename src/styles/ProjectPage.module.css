@@ -46,7 +46,7 @@
     font-weight: 550;
     background-color: rgba(31, 31, 31, 0.993); /* Semi-transparent background for readability */
     padding: clamp(10px, 3vw, 20px);
-    padding-bottom:clamp(15px, 3vw,35px);
+    padding-bottom:clamp(35px, 3vw,35px);
     width: 100%;
 }
 .projectDesc{
@@ -55,6 +55,9 @@
     font-size: 17px;
     color:rgb(99, 99, 99);
     opacity: 40px;
+    display: flex;
+    align-items: center;
+    gap:5   px;
     cursor: pointer;
     bottom:-50px;
     padding-top: 10px; /* Add padding to create a gap */
@@ -157,6 +160,7 @@
         font-weight: 550;
         background-color: rgba(31, 31, 31, 0.993); /* Semi-transparent background for readability */
         padding: clamp(10px, 3vw, 20px);
+        padding-bottom:clamp(35px, 3vw,35px);
         width: 100%;
     }
 

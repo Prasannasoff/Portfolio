@@ -63,7 +63,7 @@ const CertificatePage = () => {
         ScrollTrigger.create({
             animation: timeln,
             trigger: colLeftRef.current,
-            start: "top top",
+            start: "top 0%",
             end: "bottom center",
             scrub: true,
         });
