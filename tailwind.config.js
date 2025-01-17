@@ -11,7 +11,7 @@ export default {
         Lato: ['Lato', 'sans-serif'],
         Poppins: ['Poppins', 'sans-serif'],
         Roboto: ['Roboto', 'sans-serif'],
-        Slussen: ['Slussen', 'sans-serif'], // Add Slussen font
+        slussen: ['Slussen', 'sans-serif'], // Add Slussen font
 
       },
       keyframes: {
