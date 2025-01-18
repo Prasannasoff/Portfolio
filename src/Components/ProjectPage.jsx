@@ -7,7 +7,7 @@ import ProjectImage5 from "../assets/ProjectImages/work2!.png";
 import ProjectImage6 from "../assets/ProjectImages/bookStore.png";
 import DescriptionCard from "./DescriptionCard";
 import { FaArrowRight } from 'react-icons/fa';
-
+import {motion} from "framer-motion";
 import ProjectCard from "./ProjectCard"; // Adjust the path based on your folder structure
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import styles from '../styles/ProjectPage.module.css'
@@ -74,7 +74,7 @@ export default function ProjectPage() {
         <div className={styles.mainCont}>
             <div className={styles.projectCont}>
                 {projects.map((project, index) => (
-                    <div className={styles.projectItem} key={index}>
+                    <motion.div whileInView={{ opacity: 1 }} initial={{ opacity: 0}} transition={{ duration: 1.5 }} viewport={{amount: 0.5 }} className={styles.projectItem} key={index}>
                         <img
                             src={project.image}
                             alt={project.title}
@@ -87,7 +87,7 @@ export default function ProjectPage() {
                                 <div><FaArrowRight/></div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
             {selectedProject && (

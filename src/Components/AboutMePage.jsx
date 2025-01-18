@@ -10,17 +10,17 @@ export default function AboutMePage() {
 
     return (
         <div className="flex flex-col p-10 lg:p-24 w-screen items-center justify-center overflow-hidden px-4">
-            <div className="flex items-center gap-5 md:flex-row lg:flex-row flex-col-reverse lg:items-start lg:justify-center w-full lg:gap-16 md:gap-16  max-w-6xl">
+            <div className="flex items-center gap-5 lg:flex-row flex-col-reverse lg:items-start lg:justify-center w-full lg:gap-16 md:gap-16  max-w-6xl">
                 {/* Image Section */}
-                <div className="flex justify-center w-[300px] h-[300px] sm:w-[470px] sm:h-[520px] bg-white bg-opacity-30 lg:h-[550px] lg:w-[700px] mb-8 lg:mb-0 rounded-xl">
+                <div className="flex justify-center w-[300px] h-[300px] sm:w-[300px] sm:h-[400px] bg-white bg-opacity-30 lg:h-[550px] lg:w-[700px] mb-8 lg:mb-0 rounded-xl">
                     <img
                         src={MainImage}
                         alt="Main"
-                        className="bottom-0  h-[300px]  mt-4 w-[200px] sm:mt-0 lg:mt-0  sm:h-[545px] sm:w-[400px]  lg:w-[380px] lg:h-[575px] animate-cont-left"
+                        className="bottom-0  h-[300px]  mt-4 w-[200px] sm:mt-0 lg:mt-0  sm:h-[417px] sm:w-[300px]  lg:w-[380px] lg:h-[575px] animate-cont-left"
                     />
                 </div>
                 {/* Description Section */}
-                <div className="flex flex-col items-center md:items-start lg:items-start sm:items-center w-full">
+                <div className="flex flex-col items-center lg:items-start w-full">
                     <div className="lg:text-7xl text-2xl font-bold md:text-5xl sm:text-3xl text-white mb-5">About Me</div>
                     <div className="flex flex-col px-14 items-center lg:p=0 md:p-0 lg:max-w-[600px] sm:max-w-[500px] sm:pr-5 lg:pr-5 md:pr-5 text-white">
                         <p className="lg:text-lg text-base font-normal sm:text-md">

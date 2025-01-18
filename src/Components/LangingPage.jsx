@@ -4,10 +4,15 @@ import meteor from '../assets/meteor.png';
 import MyImage from '../assets/portfolioProfile.png';
 import gitHub from '../assets/icons/github.png'
 import LinkedIn from '../assets/icons/linkedIn.png'
-
+import { FaTimes } from 'react-icons/fa'
 import { FaCode, FaTrophy, FaPuzzlePiece } from 'react-icons/fa';
 import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from 'react-icons/fa';
 export default function LangingPage() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
     const [scrollY, setScrollY] = useState(0);
 
     //The event listener listens for the scroll event on the window object. This event fires whenever the user scrolls the page, and each time it fires, the handleScroll function is executed.
@@ -39,7 +44,16 @@ export default function LangingPage() {
             </div>
             <div className='flex flex-row h-20 w-full  justify-around items-center animate-move-down  top-0 z-10'>
                 <div className='text-4xl font-bold text-orange-600 font-Poppins'>Logo</div>
-                <div className='flex gap-10 font-medium text-xl cursor-pointer'>
+                <div className="md:hidden text-white text-3xl cursor-pointer" onClick={toggleMenu}>
+                    ☰
+                </div>
+                <div
+                    className={`flex font-Lato flex-col md:flex-row gap-5 md:gap-10 font-medium text-xl md:static fixed top-20 right-5 bg-neutral-900 cursor-pointer shadow-lg  md:bg-transparent z-20 md:h-auto md:p-0 md:px-0 px-10 p-5 md:rounded-none rounded-md items-center ${isMenuOpen ? "block" : "hidden"
+                        } md:flex`}
+                >
+                    <button onClick={toggleMenu} className="text-xl absolute top-2 right-2 text-gray-300 md:hidden hover:text-white">
+                        <FaTimes />
+                    </button>
                     <div className='hover:underline text-white'>Home</div>
                     <div className='hover:text-red-600 text-white'>About</div>
                     <div className='hover:text-red-600 text-white'>Projects</div>
