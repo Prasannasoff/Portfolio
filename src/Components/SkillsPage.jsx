@@ -28,7 +28,7 @@ function SkillsPage() {
         let finalPosition = -width / 2 - 4;
         controls = animate(xTranslation, [0, finalPosition], {
             ease: "linear",
-            duration: 25,
+            duration: 8,
             repeat: Infinity,
             repeatType: 'loop',
             repeatDelay: 0
@@ -38,11 +38,11 @@ function SkillsPage() {
 
     return (
         <div id="skills" className="pb-16">
-            <div className="text-center text-8xl text-white mb-5 py-7 font-bold">Skills</div>
+            <div className="text-center md:text-8xl text-5xl text-white mb-5 py-7 font-bold">Skills</div>
             <motion.div className="left-0 flex gap-5" ref={ref} style={{ x: xTranslation }}>
 
                 {[...skills, ...skills].map((skill, index) => (
-                    <div key={index} className="relative overflow-hidden h-[220px] min-w-[300px] bg-orange-400 bg-opacity-15 rounded-2xl flex justify-center items-center flex-col ">
+                    <div key={index} className="relative overflow-hidden md:h-[220px] md:min-w-[300px] min-w-[200px] min-h-[200px] bg-orange-400 bg-opacity-15 rounded-2xl flex justify-center items-center flex-col ">
                         {skill.icon}
                         <h3 className='text-2xl text-white mt-3 font-medium'>{skill.name}</h3>
                         <p className='text-sm text-white text-opacity-50'>{skill.level}</p>

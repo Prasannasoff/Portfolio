@@ -23,7 +23,7 @@ function ServicesPage() {
 
     return (
         <div id='services' className='flex flex-col h-full p-10'>
-            <div className='text-7xl text-white font-bold text-center mb-10'>Services Page</div>
+            <div className='md:text-7xl text-5xl text-white font-bold text-center mb-10'>Services</div>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto'>
                 {services.map((service, index) => (
                     <div key={index} className='relative flex flex-col justify-between mx-auto group'>
@@ -33,11 +33,11 @@ function ServicesPage() {
                         </div>
 
                  
-                        <div className='flex flex-col h-[330px] bg-gray-500 bg-opacity-20 rounded-xl border-gray-500 p-6 max-w-sm transform transition-all duration-500 group-hover:scale-105'>
+                        <div className='flex flex-col h-[280px] md:h-[330px] bg-gray-500 bg-opacity-20 rounded-xl border-gray-500 p-6 max-w-sm transform transition-all duration-500 group-hover:scale-105'>
                             <div className='flex flex-col gap-5 mt-5 cursor-pointer'>
                                 <div className='text-2xl font-bold text-white'>{service.name}</div>
                                 <div className='border border-orange-400 w-[60px]'></div>
-                                <div className='text-sm text-white'>{service.desc}</div>
+                                <div className='text-sm md:text-lg text-white'>{service.desc}</div>
                             </div>
                         </div>
                     </div>

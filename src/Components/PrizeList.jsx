@@ -124,9 +124,9 @@ const AchievementPage = () => {
 
     return (
         <div id="achievements" className="flex flex-col">
-            <div className="w-full mx-auto flex flex-col items-center md:items-start p-5" ref={sectionRef}>
+            <div className="w-full mx-auto flex flex-col items-center lg:items-start p-5" ref={sectionRef}>
                 <div className="flex flex-col items-center">
-                    <div className="flex flex-col md:flex-row d:gap-4 w-full">
+                    <div className="flex flex-col lg:flex-row d:gap-4 w-full">
                         <div ref={background} className="lg:min-w-[700px] lg:min-h-[700px] max-h-[540px] max-w-[450px]">
                             <img
                                 src={guestImg}
@@ -145,7 +145,7 @@ const AchievementPage = () => {
                 </div>
 
                 <div className="flex flex-col items-center">
-                    <div className="flex flex-col-reverse md:flex-row md:gap-4 w-full p-5">
+                    <div className="flex flex-col-reverse lg:flex-row lg:gap-4 w-full p-5">
                         <div ref={introText2} className="max-w-md text-white p-2 z-10">
                             <div className="text-3xl md:text-5xl font-bold mb-2">Paper Presentation</div>
                             <div className="border border-orange-500 w-48 mb-2"></div>

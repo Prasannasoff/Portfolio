@@ -72,6 +72,8 @@ export default function ProjectPage() {
 
     return (
         <div id="projects" className={styles.mainCont}>
+            <div className='md:text-7xl text-5xl text-white font-bold text-center mb-10'>Projects</div>
+
             <div className={styles.projectCont}>
                 {projects.map((project, index) => (
                     <motion.div whileInView={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: 1.5 }} viewport={{ amount: 0.5 }} className={styles.projectItem} key={index}>

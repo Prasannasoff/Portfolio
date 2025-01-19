@@ -21,7 +21,7 @@ export default function AboutMePage() {
                 </div>
                 {/* Description Section */}
                 <div className="flex flex-col items-center lg:items-start w-full">
-                    <div className="lg:text-7xl text-2xl font-bold md:text-5xl sm:text-3xl text-white mb-5">About Me</div>
+                    <div className="md:text-7xl  font-bold text-5xl text-white mb-5">About Me</div>
                     <div className="flex flex-col px-14 items-center lg:p=0 md:p-0 lg:max-w-[600px] sm:max-w-[500px] sm:pr-5 lg:pr-5 md:pr-5 text-white">
                         <p className="lg:text-lg text-base font-normal sm:text-md">
                             I am a full-stack developer with 1 year of experience building web and mobile applications using React.js, React Native, Node.js, Spring Boot, MySQL, and MongoDB. I have experience with JWT-based authentication, SQL, and have completed 1-credit courses in UI/UX design and DevOps. I enjoy solving challenges, collaborating with teams, and constantly learning new technologies.

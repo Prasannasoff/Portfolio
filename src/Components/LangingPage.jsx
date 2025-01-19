@@ -8,6 +8,7 @@ import { Link } from 'react-scroll';
 import { FaTimes } from 'react-icons/fa'
 import { FaCode, FaTrophy, FaPuzzlePiece } from 'react-icons/fa';
 import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from 'react-icons/fa';
+import CountUp from 'react-countup';
 export default function LangingPage() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -27,7 +28,8 @@ export default function LangingPage() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    console.log("Y+", scrollY);
+
+
     return (
         <div className='overflow-hidden flex w-full flex-col'>
             <div className='absolute w-10 xl:flex lg:flex flex-row gap-24 -top-20 left-0 hidden'>
@@ -45,71 +47,82 @@ export default function LangingPage() {
             </div>
             <div className='flex flex-row h-20 w-full justify-around items-center animate-move-down  top-0 z-10'>
                 <div className='text-5xl font-bold text-orange-600 font-Poppins'>PS</div>
-                <div className="md:hidden text-white text-3xl cursor-pointer" onClick={toggleMenu}>
+                <div className="lg:hidden text-white text-3xl cursor-pointer" onClick={toggleMenu}>
                     ☰
                 </div>
                 <div
-                    className={`flex font-Lato flex-col md:flex-row gap-5 md:gap-10 font-medium text-xl md:static fixed top-20 right-5 bg-neutral-900 cursor-pointer  md:bg-transparent z-20 md:h-auto md:p-0 md:px-0 px-10 p-5 md:rounded-none rounded-md items-center ${isMenuOpen ? "block" : "hidden"
-                        } md:flex`}
+                    className={`flex font-Lato flex-col lg:flex-row gap-5 lg:gap-10 font-medium text-xl lg:static fixed top-20 right-5 bg-neutral-900 cursor-pointer  lg:bg-transparent z-20 lg:h-auto lg:p-0 lg:px-0 lg-10 p-5 lg:rounded-none rounded-md items-center ${isMenuOpen ? "block" : "hidden"
+                        } lg:flex`}
                 >
-                    <button onClick={toggleMenu} className="text-xl absolute top-2 right-2 text-gray-300 md:hidden hover:text-white">
+                    <button onClick={toggleMenu} className="text-xl absolute top-2 right-2 text-gray-300 lg:hidden hover:text-white">
                         <FaTimes />
                     </button>
-                    <div className='hover:underline text-white'>Home</div>
-                    <div className='hover:text-red-600 text-white'>
-                        <Link
-                            to="about" // This is the section id you want to scroll to
-                            smooth={true}
-                            duration={900}
-                            className='hover:text-red-600 text-white cursor-pointer'
-                        >About</Link></div>
-                    <div className='hover:text-red-600 text-white'>
-                        <Link
-                            to="projects" // This is the section id you want to scroll to
-                            smooth={true}
-                            duration={900}
-                            className='hover:text-red-600 text-white cursor-pointer'
-                        >
-                            Projects
-                        </Link>
-                    </div>
-                    <div className='hover:text-red-600 text-white'><Link
+                    <Link
+                        to="home" // This is the section id you want to scroll to
+                        smooth={true}
+                        duration={900}
+                        className='transition transform duration-500 hover:scale-125 text-white cursor-pointer'
+
+                    >Home</Link>
+
+                    <Link
+                        to="about" // This is the section id you want to scroll to
+                        smooth={true}
+                        duration={900}
+                        className='transition transform duration-500 hover:scale-125 text-white cursor-pointer'
+
+                    >About</Link>
+
+                    <Link
+                        to="projects" // This is the section id you want to scroll to
+                        smooth={true}
+                        duration={900}
+                        className='transition transform duration-500 hover:scale-125 text-white cursor-pointer'
+
+                    >
+                        Projects
+                    </Link>
+
+                    <Link
                         to="skills" // This is the section id you want to scroll to
                         smooth={true}
                         duration={900}
-                        className='hover:text-red-600 text-white cursor-pointer'
+                        className='transition transform duration-500 hover:scale-125 text-white cursor-pointer'
+
                     >
                         Skills
-                    </Link></div>
-                    <div className='hover:text-red-600 text-white'><Link
+                    </Link>
+                    <Link
                         to="services" // This is the section id you want to scroll to
                         smooth={true}
                         duration={900}
-                        className='hover:text-red-600 text-white cursor-pointer'
+                        className='transition transform duration-500 hover:scale-125 text-white cursor-pointer'
+
                     >
                         Services
-                    </Link></div>
-                    <div className='hover:text-red-600 text-white'><Link
+                    </Link>
+                    <Link
                         to="achievements" // This is the section id you want to scroll to
                         smooth={true}
                         duration={900}
-                        className='hover:text-red-600 text-white cursor-pointer'
+                        className='transition transform duration-500 hover:scale-125 text-white cursor-pointer'
+
                     >
                         Achievements
-                    </Link></div>
-                    <div className='hover:text-red-600 text-white'><Link
+                    </Link>
+                    <Link
                         to="certifications" // This is the section id you want to scroll to
                         smooth={true}
                         duration={900}
-                        className='hover:text-red-600 text-white cursor-pointer'
+                        className='transition transform duration-500 hover:scale-125 text-white cursor-pointer'
                     >
                         Certifications
-                    </Link></div>
+                    </Link>
 
                 </div>
 
             </div>
-            <div className='flex h-full w-screen py-10 p-7 gap-6 flex-col justify-center xl:flex-row lg:flex-row overflow-hidden items-center' >
+            <div id="home" className='flex h-full w-screen py-10 p-7 gap-6 flex-col justify-center xl:flex-row lg:flex-row overflow-hidden items-center' >
 
                 <div className='flex xl:gap-4 lg:gap-6 gap-8 items-center xl:items-start lg:items-start w-[700px] flex-col ml-0 xl:ml-20 lg:ml-20'>
                     <div className='xl:text-2xl lg:text-2xl  md:text-3xl text-xl font-medium text-orange-500 text-center lg:text-start xl:text-start font-Rubik animate-move-down '>Full Stack Developer</div>
@@ -143,7 +156,10 @@ export default function LangingPage() {
                         <div className=' p-2 rounded-xl bg-white max-w-[180px] flex items-center justify-center gap-2 shadow-lg'>
                             <FaCode className='text-black text-opacity-70' size={35} color='#f97316' />
                             <div className='text-black text-opacity-70 flex items-center'>
-                                <span className='text-orange-500 md:text-2xl lg:text-2xl xl:text-2xl text-sm font-bold'>5+</span>
+                                <span className='text-orange-500 md:text-2xl lg:text-2xl xl:text-2xl text-sm font-bold'>
+                                    <CountUp start={0} end={5} duration={1} />
+                                    +
+                                </span>
                                 <div className='text-sm'>Projects</div>
                             </div>
                         </div>
@@ -152,7 +168,9 @@ export default function LangingPage() {
                         <div className='p-1 ld:p-2 xl:p-2 md:p-2 items-center rounded-xl max-w-[140px] lg:max-w-[180px] xl:max-w-[180px] md:max-w-[180px] bg-white flex gap-2 shadow-lg'>
                             <FaPuzzlePiece className='text-black text-opacity-70' size={35} color='#f97316' />
                             <div className='text-black text-opacity-70 flex items-center'>
-                                <span className='text-orange-500 md:text-2xl lg:text-2xl xl:text-2xl text-sm font-bold'>200+</span>
+                                <span className='text-orange-500 md:text-2xl lg:text-2xl xl:text-2xl text-sm font-bold' data-num="200">
+                                    <CountUp start={0} end={200} duration={2} />+
+                                </span>
                                 <div className='text-sm'>Leetcode Problems</div>
                             </div>
                         </div>
@@ -162,7 +180,9 @@ export default function LangingPage() {
                         <div className='p-1 ld:p-2 xl:p-2 md:p-2 items-center rounded-xl max-w-[180px] bg-white flex gap-2 shadow-lg'>
                             <FaTrophy className='text-black text-opacity-70' size={35} color='#f97316' />
                             <div className='text-black text-opacity-70 flex items-center'>
-                                <span className='text-orange-500 md:text-2xl lg:text-2xl xl:text-2xl text-sm font-bold'>2+</span>
+                                <span className='text-orange-500 md:text-2xl lg:text-2xl xl:text-2xl text-sm font-bold'>
+                                    <CountUp start={0} end={2} duration={2} />
+                                </span>
                                 <div className='text-sm'>Achievements</div>
                             </div>
                         </div>
