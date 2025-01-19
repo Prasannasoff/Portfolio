@@ -22,7 +22,7 @@ function ServicesPage() {
     ];
 
     return (
-        <div className='flex flex-col h-full p-10'>
+        <div id='services' className='flex flex-col h-full p-10'>
             <div className='text-7xl text-white font-bold text-center mb-10'>Services Page</div>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto'>
                 {services.map((service, index) => (

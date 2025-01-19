@@ -4,6 +4,7 @@ import meteor from '../assets/meteor.png';
 import MyImage from '../assets/portfolioProfile.png';
 import gitHub from '../assets/icons/github.png'
 import LinkedIn from '../assets/icons/linkedIn.png'
+import { Link } from 'react-scroll';
 import { FaTimes } from 'react-icons/fa'
 import { FaCode, FaTrophy, FaPuzzlePiece } from 'react-icons/fa';
 import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from 'react-icons/fa';
@@ -42,22 +43,69 @@ export default function LangingPage() {
                 <img src={meteor} className='animate-light animation-delay-10800' alt='meteor' />
                 <img src={meteor} className='animate-light animation-delay-500' alt='meteor' />
             </div>
-            <div className='flex flex-row h-20 w-full  justify-around items-center animate-move-down  top-0 z-10'>
-                <div className='text-4xl font-bold text-orange-600 font-Poppins'>Logo</div>
+            <div className='flex flex-row h-20 w-full justify-around items-center animate-move-down  top-0 z-10'>
+                <div className='text-5xl font-bold text-orange-600 font-Poppins'>PS</div>
                 <div className="md:hidden text-white text-3xl cursor-pointer" onClick={toggleMenu}>
                     ☰
                 </div>
                 <div
-                    className={`flex font-Lato flex-col md:flex-row gap-5 md:gap-10 font-medium text-xl md:static fixed top-20 right-5 bg-neutral-900 cursor-pointer shadow-lg  md:bg-transparent z-20 md:h-auto md:p-0 md:px-0 px-10 p-5 md:rounded-none rounded-md items-center ${isMenuOpen ? "block" : "hidden"
+                    className={`flex font-Lato flex-col md:flex-row gap-5 md:gap-10 font-medium text-xl md:static fixed top-20 right-5 bg-neutral-900 cursor-pointer  md:bg-transparent z-20 md:h-auto md:p-0 md:px-0 px-10 p-5 md:rounded-none rounded-md items-center ${isMenuOpen ? "block" : "hidden"
                         } md:flex`}
                 >
                     <button onClick={toggleMenu} className="text-xl absolute top-2 right-2 text-gray-300 md:hidden hover:text-white">
                         <FaTimes />
                     </button>
                     <div className='hover:underline text-white'>Home</div>
-                    <div className='hover:text-red-600 text-white'>About</div>
-                    <div className='hover:text-red-600 text-white'>Projects</div>
-                    <div className='hover:text-red-600 text-white'>Contacts</div>
+                    <div className='hover:text-red-600 text-white'>
+                        <Link
+                            to="about" // This is the section id you want to scroll to
+                            smooth={true}
+                            duration={900}
+                            className='hover:text-red-600 text-white cursor-pointer'
+                        >About</Link></div>
+                    <div className='hover:text-red-600 text-white'>
+                        <Link
+                            to="projects" // This is the section id you want to scroll to
+                            smooth={true}
+                            duration={900}
+                            className='hover:text-red-600 text-white cursor-pointer'
+                        >
+                            Projects
+                        </Link>
+                    </div>
+                    <div className='hover:text-red-600 text-white'><Link
+                        to="skills" // This is the section id you want to scroll to
+                        smooth={true}
+                        duration={900}
+                        className='hover:text-red-600 text-white cursor-pointer'
+                    >
+                        Skills
+                    </Link></div>
+                    <div className='hover:text-red-600 text-white'><Link
+                        to="services" // This is the section id you want to scroll to
+                        smooth={true}
+                        duration={900}
+                        className='hover:text-red-600 text-white cursor-pointer'
+                    >
+                        Services
+                    </Link></div>
+                    <div className='hover:text-red-600 text-white'><Link
+                        to="achievements" // This is the section id you want to scroll to
+                        smooth={true}
+                        duration={900}
+                        className='hover:text-red-600 text-white cursor-pointer'
+                    >
+                        Achievements
+                    </Link></div>
+                    <div className='hover:text-red-600 text-white'><Link
+                        to="certifications" // This is the section id you want to scroll to
+                        smooth={true}
+                        duration={900}
+                        className='hover:text-red-600 text-white cursor-pointer'
+                    >
+                        Certifications
+                    </Link></div>
+
                 </div>
 
             </div>

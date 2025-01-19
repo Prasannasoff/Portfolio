@@ -83,7 +83,7 @@ const CertificatePage = () => {
     }, [isMobile]);
 
     return (
-        <div ref={sectionRef} className="lg:min-h-[200vh] h-full lg:block flex flex-col w-screen pt-[100px] lg:p-0 p-5 min-p-3 font-slussen text-[24px] font-normal text-white">
+        <div id="certifications" ref={sectionRef} className="lg:min-h-[200vh] h-full lg:block flex flex-col w-screen pt-[100px] lg:p-0 p-5 min-p-3 font-slussen text-[24px] font-normal text-white">
             <div className="w-[95%] flex mx-auto">
                 <div className="flex justify-center lg:flex-row flex-col items-center">
                     <div ref={colLeftRef} className="w-1/2 h-full">

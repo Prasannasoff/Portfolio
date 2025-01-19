@@ -123,7 +123,7 @@ const AchievementPage = () => {
     }, [isMobile]); // Re-run animations when `isMobile` changes
 
     return (
-        <div className="flex flex-col">
+        <div id="achievements" className="flex flex-col">
             <div className="w-full mx-auto flex flex-col items-center md:items-start p-5" ref={sectionRef}>
                 <div className="flex flex-col items-center">
                     <div className="flex flex-col md:flex-row d:gap-4 w-full">

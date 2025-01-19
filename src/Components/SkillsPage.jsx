@@ -37,7 +37,7 @@ function SkillsPage() {
     }, [xTranslation, width]);
 
     return (
-        <div className="pb-16">
+        <div id="skills" className="pb-16">
             <div className="text-center text-8xl text-white mb-5 py-7 font-bold">Skills</div>
             <motion.div className="left-0 flex gap-5" ref={ref} style={{ x: xTranslation }}>
 
