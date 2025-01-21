@@ -188,7 +188,7 @@ export default function LangingPage() {
                         </div>
 
                     </div>
-                    <div className='bg-green-400 w-[280px] h-[330px] rounded-3xl md:w-[390px] md:h-[470px] lg:min-w-[420px] lg:min-h-[480px] xl:w-[480px] xl:h-[570px] flex overflow-hidden' style={{
+                    <div className='w-[280px] h-[330px] rounded-3xl md:w-[390px] md:h-[470px] lg:min-w-[420px] lg:min-h-[480px] xl:w-[480px] xl:h-[570px] flex overflow-hidden' style={{
                         transform: `translateY(${scrollY * 0.4}px)`, // Slower movement
                         transition: 'transform 0.1s ease-out',
                     }}  >

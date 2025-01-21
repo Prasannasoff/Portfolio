@@ -1,3 +1,5 @@
+import { transform } from 'framer-motion';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -63,11 +65,15 @@ export default {
             transform: 'translate(80vw,100vh)'
           }
         },
+        'loop-scroll':{
+          from:{transform:"translateX(0)"},
+          to:{transform:"translateX(-100%)"}
+        },
       },
       animation: {
         'move-down': 'move-down 2s ease forwards',
         'move-up': 'move-up 2s ease forwards',
-
+        'loop-scroll':'loop-scroll 10s linear infinite',
         'movement': 'movement 1.5s ease infinite',
 
         'rotate': 'rotate 8s linear infinite',
