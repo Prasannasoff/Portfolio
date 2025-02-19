@@ -99,7 +99,6 @@ export default function LangingPage() {
                         smooth={true}
                         duration={900}
                         className='transition transform duration-500 hover:scale-125 text-white cursor-pointer'
-
                     >
                         Services
                     </Link>
@@ -108,7 +107,6 @@ export default function LangingPage() {
                         smooth={true}
                         duration={900}
                         className='transition transform duration-500 hover:scale-125 text-white cursor-pointer'
-
                     >
                         Achievements
                     </Link>
