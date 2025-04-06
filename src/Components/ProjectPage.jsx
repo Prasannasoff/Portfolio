@@ -76,8 +76,9 @@ export default function ProjectPage() {
 
             <div className={styles.projectCont}>
                 {projects.map((project, index) => (
-                    <motion.div whileInView={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: 1.5 }} viewport={{ amount: 0.5 }} className={styles.projectItem} key={index}>
+                    <motion.div whileInView={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: 1, delay: index * 0.1 }} viewport={{ amount: 0.5 }} className={styles.projectItem} key={index}>
                         <img
+                            loading="lazy"
                             src={project.image}
                             alt={project.title}
                             className={styles.projectImage}

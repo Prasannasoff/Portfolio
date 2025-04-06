@@ -31,8 +31,6 @@ function ServicesPage() {
                         <div className='absolute left-4 -top-6 flex items-center justify-center rounded-full min-w-[60px] h-[60px] bg-orange-500 transform transition-all duration-500 group-hover:scale-105 z-10'>
                             {service.icon}
                         </div>
-
-                 
                         <div className='flex flex-col h-[280px] md:h-[330px] bg-gray-500 bg-opacity-20 rounded-xl border-gray-500 p-6 max-w-sm transform transition-all duration-500 group-hover:scale-105'>
                             <div className='flex flex-col gap-5 mt-5 cursor-pointer'>
                                 <div className='text-2xl font-bold text-white'>{service.name}</div>
